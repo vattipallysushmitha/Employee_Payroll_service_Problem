@@ -1,10 +1,16 @@
-/*Purpose==>Create an Employee Payroll Service to Read and Write Employee Payroll to a Console
-           - Create Employee Payroll Class of id, name and Salary
+/*Purpose==>Write a program to demonstrate File Operations like
+             - Check File Exists
+             - Delete File and Check File Not Exist
+             - Create Directory
+             - Create Empty File
+             - List Files, Directories as well as Files with Extension
 *Author==>Sushmitha
 *Signin==>11-10--2022
 */
 package com.bridzelab.EmployeePayrollService;
 
+import java.io.File;//provides a set of input streams and a set of output streams
+                    // used to read and write data to files or other input and output sources.
 import java.util.ArrayList;//ArrayList in Java is used to store dynamically sized collection of elements.
 import java.util.List;//represents an ordered sequence of objects.
 import java.util.Scanner;// read input from the input stream
@@ -42,8 +48,16 @@ public class EmployeePayrollService
         employeePayrollList.add(new EmployeePayrollData(id, name, salary));
     }
 
-    private void writeEmployeePayrollData()
-    {
+    private void writeEmployeePayrollData() {
         System.out.println("\nWriting Employee Payroll Data to Console\n" + employeePayrollList);
+    }
+    public static boolean deleteFiles(File contentsToDelete) {
+        File[] allContents = contentsToDelete.listFiles();
+        if (allContents != null) {
+            for (File file : allContents) {
+                deleteFiles(file);
+            }
+        }
+        return contentsToDelete.delete();
     }
 }
