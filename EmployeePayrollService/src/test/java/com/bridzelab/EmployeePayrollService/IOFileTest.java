@@ -56,4 +56,11 @@ public class IOFileTest
                 .forEach(System.out::println);
 
     }
+    @Test
+    public void givenADirectoryWhenWatchedListsAllTheActivities() throws IOException{
+        Path dir = Paths.get(PATH+ "/"+NEW_DIRECTORY_NAME);
+        Files.list(dir).filter(Files::isRegularFile).forEach(System.out::println);
+        new JavaWatchService(dir).processEvents();
+    }
 }
+

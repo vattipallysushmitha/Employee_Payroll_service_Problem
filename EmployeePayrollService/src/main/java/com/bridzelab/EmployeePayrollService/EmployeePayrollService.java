@@ -1,9 +1,5 @@
-/*Purpose==>Write a program to demonstrate File Operations like
-             - Check File Exists
-             - Delete File and Check File Not Exist
-             - Create Directory
-             - Create Empty File
-             - List Files, Directories as well as Files with Extension
+/*Purpose==>Create a Watch Service to watch particular directory along with all Files and Sub Directories
+           - Using File IO Count Number of Entries in the File
 *Author==>Sushmitha
 *Signin==>11-10--2022
 */
